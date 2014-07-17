@@ -235,7 +235,7 @@ class CmfRoutingExtension extends Extension
 
         $container->setParameter(
             $this->getAlias() . '.dynamic.persistence.phpcr.route_basepaths',
-            $config['route_basepaths']
+            array_unique($config['route_basepaths'])
         );
 
         $basePath = reset($config['route_basepaths']);
